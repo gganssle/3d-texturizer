@@ -1,0 +1,6 @@
+C:\Users\gram\Documents\cs\3d-texturizer\texturize\texturize\bin\Debug\texturize.exe.config
+C:\Users\gram\Documents\cs\3d-texturizer\texturize\texturize\bin\Debug\texturize.exe
+C:\Users\gram\Documents\cs\3d-texturizer\texturize\texturize\bin\Debug\texturize.pdb
+C:\Users\gram\Documents\cs\3d-texturizer\texturize\texturize\obj\Debug\texturize.csprojResolveAssemblyReference.cache
+C:\Users\gram\Documents\cs\3d-texturizer\texturize\texturize\obj\Debug\texturize.exe
+C:\Users\gram\Documents\cs\3d-texturizer\texturize\texturize\obj\Debug\texturize.pdb
