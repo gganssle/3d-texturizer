@@ -1,41 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+
 
 namespace texturize
 {
-    class Create3DTex : MonoBehaviour
+    class Create3DTex
     {
-
-        public Texutre3D tex;
-        public int size = 16;
-
         static void Main()
         {
 
-            tex = new Texture3D(size, size, size, TextureFormat.ARGB32, true);
-            var cols = new Color[size * size * size];
-            float mul = 1.0f / (size - 1);
-            int idx = 0;
-            Color c = Color.white;
-            for (int z = 0; z < size; ++z)
+            using (BinaryReader b = new BinaryReader(File.Open("C:/Users/gram/Documents/cs/3d-texturizer/dat/strip.bin", FileMode.Open)))
             {
-                for (int y = 0; y < size; ++y)
+                int pos = 0;
+                int length = (int)b.BaseStream.Length;
+                while (pos < length)
                 {
-                    for (int x = 0; x < size; ++x, ++idx)
-                    {
-                        c.r = ((x) != 0) ? x * mul : 1 - x * mul;
-                        c.g = ((y) != 0) ? y * mul : 1 - y * mul;
-                        c.b = ((z) != 0) ? z * mul : 1 - z * mul;
-                        cols[idx] = c;
-                    }
+                    float v = b.ReadSingle();
+                    Console.WriteLine(v);
+                    pos += sizeof(Single);
                 }
             }
-            tex.SetPixels(cols);
-            tex.Apply();
-            GetComponent<Renderer>().material.SetTexture("_Volume", tex);
+
 
         }
     }
+}
